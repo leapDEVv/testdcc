@@ -1202,7 +1202,7 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
         const btn = e.currentTarget;
         const rect = btn.getBoundingClientRect();
         menu.style.left = (rect.right + 8) + 'px';
-        menu.style.top = (rect.top - 220) + 'px';
+        menu.style.top = (rect.top - 180) + 'px';
         menu.style.visibility = 'visible';
         menu.style.display = 'block';
         menuFocus.focus();
