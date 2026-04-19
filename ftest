@@ -1,4 +1,3 @@
-
 // ==UserScript==
 // @name         SimpleDiscordCryptV2
 // @namespace    https://gitlab.com/n01sed/SimpleDiscordCryptV2
@@ -1087,10 +1086,12 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
     },
   };
   const MenuBar = {
-    menuBarCss: `.SDC_TOGGLE{opacity:.6;fill:#fff;height:22px;width:22px;cursor:pointer;display:inline-block;vertical-align:middle;flex-shrink:0}.SDC_TOGGLE:hover{opacity:.9}.sdc-tooltip{pointer-events:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);white-space:nowrap}.sdc-menu{z-index:10000}`,
-    toggleOnButtonHtml: `<div class="sdc" style="display:inline-flex;align-items:center;margin:0 0 0 4px;vertical-align:middle;position:relative"><svg class="SDC_TOGGLE" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M18 0c-4.612 0-8.483 3.126-9.639 7.371l3.855 1.052C12.91 5.876 15.233 4 18 4c3.313 0 6 2.687 6 6v10h4V10c0-5.522-4.477-10-10-10z"/><path d="M31 32c0 2.209-1.791 4-4 4H9c-2.209 0-4-1.791-4-4V20c0-2.209 1.791-4 4-4h18c2.209 0 4 1.791 4 4v12z"/></svg><p class="sdc-tooltip">Encrypt Channel</p></div>`,
-    toggleOffButtonHtml: `<div class="sdc" style="display:inline-flex;align-items:center;margin:0 0 0 4px;vertical-align:middle;position:relative"><svg class="SDC_TOGGLE" style="opacity:1;fill:#00ff00" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M18 3C12.477 3 8 7.477 8 13v10h4V13c0-3.313 2.686-6 6-6s6 2.687 6 6v10h4V13c0-5.523-4.477-10-10-10z"/><path d="M31 32c0 2.209-1.791 4-4 4H9c-2.209 0-4-1.791-4-4V20c0-2.209 1.791-4 4-4h18c2.209 0 4 1.791 4 4v12z"/></svg><p class="sdc-tooltip">Disable Encryption</p></div>`,
-    keySelectButtonHtml: `<div class="sdc" style="display:inline-flex;align-items:center;margin:0 0 0 8px;vertical-align:middle"><button type="button" class="SDC_KEYSELECT_BTN" style="min-width:160px;max-width:260px;height:28px;background:rgba(139,92,246,.12);border:solid 1px rgba(139,92,246,.35);border-radius:6px;padding:0 10px;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;transition:border-color .15s ease,background .15s ease"><p class="SDC_SELECTED" style="text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;color:rgba(196,181,253,.9)"></p></button></div>`,
+    menuBarCss: `.SDC_TOGGLE{opacity:.7;fill:#fff;height:20px;width:20px;cursor:pointer;display:block;flex-shrink:0}.SDC_TOGGLE:hover{opacity:1}.sdc-tooltip{pointer-events:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);white-space:nowrap;z-index:10001}.sdc-menu{z-index:10000}
+#sdc-chatbar-wrapper{position:absolute;bottom:100%;right:0;margin-bottom:4px;display:flex;flex-direction:row;align-items:center;gap:6px;z-index:1000;padding:0 8px}
+#sdc-chatbar-wrapper .sdc{display:inline-flex;align-items:center}`,
+    toggleOnButtonHtml: `<div class="sdc" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(0,0,0,.2);border:1px solid rgba(139,92,246,.25);cursor:pointer;transition:background .15s,border-color .15s" onmouseenter="this.style.background='rgba(109,40,217,.2)';this.style.borderColor='rgba(139,92,246,.55)'" onmouseleave="this.style.background='rgba(0,0,0,.2)';this.style.borderColor='rgba(139,92,246,.25)'"><svg class="SDC_TOGGLE" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M18 0c-4.612 0-8.483 3.126-9.639 7.371l3.855 1.052C12.91 5.876 15.233 4 18 4c3.313 0 6 2.687 6 6v10h4V10c0-5.522-4.477-10-10-10z"/><path d="M31 32c0 2.209-1.791 4-4 4H9c-2.209 0-4-1.791-4-4V20c0-2.209 1.791-4 4-4h18c2.209 0 4 1.791 4 4v12z"/></svg><p class="sdc-tooltip" style="font-size:11px;background:rgba(10,3,26,.95);color:#c4b5fd;border:1px solid rgba(109,40,217,.4);border-radius:6px;padding:4px 8px">Encrypt Channel</p></div>`,
+    toggleOffButtonHtml: `<div class="sdc" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(0,255,80,.08);border:1px solid rgba(0,255,80,.35);cursor:pointer;transition:background .15s,border-color .15s" onmouseenter="this.style.background='rgba(0,255,80,.18)';this.style.borderColor='rgba(0,255,80,.6)'" onmouseleave="this.style.background='rgba(0,255,80,.08)';this.style.borderColor='rgba(0,255,80,.35)'"><svg class="SDC_TOGGLE" style="opacity:1;fill:#00ff50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M18 3C12.477 3 8 7.477 8 13v10h4V13c0-3.313 2.686-6 6-6s6 2.687 6 6v10h4V13c0-5.523-4.477-10-10-10z"/><path d="M31 32c0 2.209-1.791 4-4 4H9c-2.209 0-4-1.791-4-4V20c0-2.209 1.791-4 4-4h18c2.209 0 4 1.791 4 4v12z"/></svg><p class="sdc-tooltip" style="font-size:11px;background:rgba(10,3,26,.95);color:#86efac;border:1px solid rgba(0,255,80,.35);border-radius:6px;padding:4px 8px">Disable Encryption</p></div>`,
+    keySelectButtonHtml: `<div class="sdc" style="display:inline-flex;align-items:center"><button type="button" class="SDC_KEYSELECT_BTN" style="min-width:140px;max-width:220px;height:32px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.3);border-radius:8px;padding:0 10px;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;transition:background .15s,border-color .15s" onmouseenter="this.style.background='rgba(109,40,217,.2)';this.style.borderColor='rgba(167,139,250,.55)'" onmouseleave="this.style.background='rgba(139,92,246,.1)';this.style.borderColor='rgba(139,92,246,.3)'"><p class="SDC_SELECTED" style="font-size:12px;color:rgba(196,181,253,.9);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px"></p></button></div>`,
     toggledOnCss: `${ChatInputSelector}{box-shadow:0 0 0 1px ${BaseColor} !important}`,
     menuHtml: `<button type="button" class="SDC_FOCUS sdc-hidden"></button>
 <div class="sdc sdc-menu SDC_MENU" style="visibility:hidden">
@@ -1209,40 +1210,21 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
       };
 
       this.Update = function (isRetry) {
-        let titleElement = null;
+        // Cible : la zone channelTextArea (barre de saisie)
+        const chatAreaSelectors = [
+          'div[class^=channelTextArea]',
+          'div[class*=channelTextArea]',
+          'form[class*=form] div[class*=inner]',
+          'div[class*=textArea][class*=inner]',
+        ];
 
-        // Chercher UNIQUEMENT dans la barre de header du canal (pas dans la sidebar ni le profil)
-        // On cherche d'abord la headerBar elle-même, puis on prend le titre à l'intérieur
-        let headerBar = null;
-        for (const sel of HeaderBarSelectors) {
-          headerBar = document.querySelector(sel);
-          if (headerBar) break;
+        let chatArea = null;
+        for (const sel of chatAreaSelectors) {
+          chatArea = document.querySelector(sel);
+          if (chatArea) break;
         }
 
-        if (headerBar) {
-          // Chercher le nom de canal DANS la headerBar uniquement
-          for (const sel of HeaderBarChannelNameSelectors) {
-            const candidate = headerBar.querySelector(sel);
-            if (candidate) {
-              titleElement = candidate;
-              break;
-            }
-          }
-        }
-
-        // Fallback : sélecteur legacy, mais uniquement si dans une zone header
-        if (!titleElement) {
-          const legacy = document.querySelector(HeaderBarChannelNameSelector);
-          // Vérifier que ce n'est PAS dans la sidebar (panel latéral gauche/droit)
-          if (legacy && !legacy.closest('[class*=sidebar]') && !legacy.closest('[class*=panels]') && !legacy.closest('[class*=nameTag]') && !legacy.closest('[class*=userInfo]')) {
-            titleElement = legacy;
-          }
-        }
-
-        // Ne jamais remonter au parentElement — ça cause le décalage sur le nom de compte
-        // On garde titleElement tel quel, on insère directement après lui
-
-        if (titleElement == null) {
+        if (chatArea == null) {
           if (!isRetry) this.retries = 0;
           if (this.retries < 10) {
             this.retries++;
@@ -1254,12 +1236,30 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
         }
         clearTimeout(this.retryTimeout);
 
+        // S'assurer que la chatArea est en position relative pour que notre wrapper absolu fonctionne
+        if (getComputedStyle(chatArea).position === 'static') {
+          chatArea.style.position = 'relative';
+        }
+
+        // Créer ou récupérer le wrapper fixé au-dessus de la barre de saisie
+        if (!this.chatBarWrapper) {
+          this.chatBarWrapper = document.createElement('div');
+          this.chatBarWrapper.id = 'sdc-chatbar-wrapper';
+          this.chatBarWrapper.style.cssText = 'position:absolute;bottom:100%;right:8px;margin-bottom:6px;display:flex;flex-direction:row;align-items:center;gap:6px;z-index:1000;pointer-events:auto';
+        }
+
+        if (!chatArea.contains(this.chatBarWrapper)) {
+          chatArea.appendChild(this.chatBarWrapper);
+        }
+
         if (this.mutationObserver != null) this.mutationObserver.disconnect();
         else
           this.mutationObserver = new MutationObserver((changes) => {
             for (let change of changes)
               for (let removed of change.removedNodes)
                 if (
+                  removed === this.chatBarWrapper ||
+                  removed.contains(this.chatBarWrapper) ||
                   removed === this.keySelectButton ||
                   removed.contains(this.keySelectButton)
                 ) {
@@ -1269,31 +1269,30 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
           });
 
         let styleEnabled = document.head.contains(this.toggledOnStyle);
-        let keySelectEnabled = document.body.contains(this.keySelectButton);
-        let toggleOnEnabled = document.body.contains(this.toggleOnButton);
-        let toggleOffEnabled = document.body.contains(this.toggleOffButton);
+        let keySelectEnabled = this.chatBarWrapper.contains(this.keySelectButton);
+        let toggleOnEnabled = this.chatBarWrapper.contains(this.toggleOnButton);
+        let toggleOffEnabled = this.chatBarWrapper.contains(this.toggleOffButton);
         let toggledOn = getToggleStatus();
 
         let keyInfo = getCurrentKeyInfo();
         keySelectSelected.innerText = keyInfo[0 /*descriptor*/];
-        keySelectSelected.style.color = keyInfo[1 /*trusted*/]
-          ? BaseColor
-          : null;
+        keySelectSelected.style.color = keyInfo[1 /*trusted*/] ? BaseColor : null;
 
-        // Insertion après le titre du canal dans la headerBar
+        // Bouton de clé toujours présent dans le wrapper
         if (!keySelectEnabled)
-          titleElement.insertAdjacentElement('afterend', this.keySelectButton);
+          this.chatBarWrapper.appendChild(this.keySelectButton);
 
+        // Cadenas selon état
         if (toggledOn) {
           if (!styleEnabled) document.head.appendChild(this.toggledOnStyle);
           if (toggleOnEnabled) this.toggleOnButton.remove();
           if (!toggleOffEnabled)
-            titleElement.insertAdjacentElement('afterend', this.toggleOffButton);
+            this.chatBarWrapper.appendChild(this.toggleOffButton);
         } else {
           if (styleEnabled) document.head.removeChild(this.toggledOnStyle);
           if (toggleOffEnabled) this.toggleOffButton.remove();
           if (!toggleOnEnabled)
-            titleElement.insertAdjacentElement('afterend', this.toggleOnButton);
+            this.chatBarWrapper.appendChild(this.toggleOnButton);
         }
 
         if (getIsDmChannel()) {
@@ -1304,13 +1303,11 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
           menuNondmGroup.style.display = null;
         }
 
-        let randomChangesNode =
-          document.getElementsByClassName('base-3dtUhz')[0];
-        if (randomChangesNode != null)
-          this.mutationObserver.observe(randomChangesNode, {
-            childList: true,
-            subtree: true,
-          });
+        // Observer pour réinjecter si la chatArea est reconstruite
+        this.mutationObserver.observe(chatArea.parentElement || document.body, {
+          childList: true,
+          subtree: true,
+        });
       };
       this.Update();
     },
@@ -1318,6 +1315,7 @@ ${HeaderBarSelector}, ${HeaderBarChildrenSelector}, ${HeaderBarSelectors.join(',
       if (this.mutationObserver) this.mutationObserver.disconnect();
       if (this.toggledOnStyle) this.toggledOnStyle.remove();
       if (this.menuBarStyle) this.menuBarStyle.remove();
+      if (this.chatBarWrapper) this.chatBarWrapper.remove();
       if (this.keySelectButton) this.keySelectButton.remove();
       if (this.toggleOnButton) this.toggleOnButton.remove();
       if (this.toggleOffButton) this.toggleOffButton.remove();
